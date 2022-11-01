@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,900');
 
 :root {
-	--clr-dark: 232323;
-	--clr-secondary-light: #00ff6c;
+	--screensize-lg: 60rem;
+	--clr-light: #d7f9ff;
+	--clr-dark: #232323;
+	--clr-secondary-light: #c4a77d;
+	--clr-lightblue: #65def1;
+	--clr-darkblue: #2d728f;
 }
 * {
 	box-sizing: border-box;
@@ -27,10 +31,7 @@ img {
 	overflow: hidden;
 }
 
-/*::after selector inserts something 
-after the content of each selected element.
-(::) = pseudo elements (:) = pseudo classes 
-clear: both does not allow floating elements on left or right*/
+/*clear: both does not allow floating elements on left or right*/
 .clearfix::after,
 section::after,
 footer::after {
@@ -42,7 +43,6 @@ footer::after {
 /*column system
 ===============*/
 
-/*attribute selector: any class starts with "col-"*/
 [class^='col-'] {
 	width: 100%;
 	margin-top: 1em;
@@ -52,7 +52,7 @@ footer::after {
 }
 
 .col-1 {
-	/*col 1 side by side, not stacked*/
+	/*col 1 stacked on X*/
 	width: 33.3333%;
 	float: left;
 }
@@ -98,15 +98,16 @@ p:last-of-type {
 }
 
 .title {
-	font-size: 2.5em;
+	color: var(--clr-dark);
+	font-size: 4em;
 	margin-bottom: 1.5em;
-	font-weight: 900;
+	font-weight: 1000;
 	margin-top: 1em;
 }
 .title span {
-	font-weight: 300;
+	font-weight: 400;
 	display: block;
-	font-size: 0.9em;
+	font-size: 0.8em;
 }
 
 .title-cta {
@@ -129,12 +130,12 @@ p:last-of-type {
 ========*/
 .button {
 	display: inline-block;
-	font-size: 1.15rem;
+	font-size: 1.25rem;
 	text-decoration: none;
 	text-transform: uppercase;
 	border-width: 3px;
-	border-style: groove;
-	/* border-style: solid; */
+	border-style: ridge;
+	border-radius: 5px;
 	padding: 0.5em 1.75em;
 }
 
@@ -150,25 +151,31 @@ p:last-of-type {
 }
 
 .button-accent {
-	color: #00ff6c;
-	border-color: #00ff6c;
+	background: rgb(35, 35, 35);
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(10px);
+	color: var(--clr-dark);
+	border-color: var(--clr-secondary-light);
 }
 
 .button-accent:hover,
 .button-accent:focus {
-	background: #00ff6c;
-	color: var(--clr-dark);
+	/* background: var(--clr-secondary-light); */
+	background: rgba(35, 35, 35, 0.6);
+
+	color: var(--clr-secondary-light);
 }
 
 .button-dark {
-	color: #232323;
-	border-color: #232323;
+	color: var(--clr-dark);
+	border-color: var(--clr-dark);
 }
 
 .button-dark:hover,
 .button-dark:focus {
-	background: #232323;
-	color: #00ff6c;
+	background: var(--clr-dark);
+	color: var(--clr-secondary-light);
 }
 
 /*Parallax
@@ -181,7 +188,6 @@ p:last-of-type {
 	}
 	.parallax--box {
 		transition: 250ms;
-		/* transition: initial; */
 	}
 }
 
@@ -191,8 +197,6 @@ header {
 	position: absolute;
 	width: 100%;
 	margin: 1em;
-	/*left, right=0==width 100%
-	 margin-top: 1em; */
 }
 
 nav ul {
@@ -204,19 +208,32 @@ nav ul {
 
 nav li {
 	display: inline-block;
-	margin: 1em;
+	margin: 2em;
 }
 nav a {
 	font-weight: 900;
 	text-decoration: none;
 	text-transform: uppercase;
-	font-size: 0.8rem;
+	font-size: 0.91rem;
 	padding: 0.5em;
-	color: #fff;
+	color: rgb(53, 33, 33);
 }
-nav a hover,
-nav a focus {
-	color: #ddd;
+nav a::after {
+	content: '';
+	display: block;
+	box-sizing: border-box;
+	width: 0;
+	height: 1px;
+	background-color: #000;
+	transition: width 350ms ease;
+}
+nav a:hover::after,
+nav a:focus::after {
+	width: 100%;
+}
+nav a:hover,
+nav a:focus {
+	color: #000;
 }
 
 @media (min-width: 60rem) {
@@ -261,14 +278,14 @@ nav a focus {
 	background-color: #232323;
 	padding: 4em;
 	width: 100vw;
-	margin-left: -2.5%;
-	outline: 2.5px solid #00ff6c;
+	margin-left: -4.5%;
+	outline: 2.5px solid var(--clr-secondary-light);
 	outline-offset: -2.5em;
 	position: relative;
 }
 
 .home-about-textbox h1 {
-	color: #00ff6c;
+	color: var(--clr-secondary-light);
 	position: absolute;
 
 	/*center title*/
@@ -383,7 +400,7 @@ nav a focus {
 ===============*/
 
 .cta {
-	background-color: #00ff6c;
+	background-color: var(--clr-secondary-light);
 	padding: 5em 0;
 	color: #232323;
 }
@@ -393,7 +410,7 @@ nav a focus {
 
 footer {
 	background: #232323;
-	color: #fff;
+	color: var(--clr-light);
 	text-align: left;
 	padding: 5em 0;
 }
