@@ -2,7 +2,7 @@
 
 :root {
 	--screensize-lg: 60rem;
-	--clr-light: #d7f9ff;
+	--clr-light: #ddfaff;
 	--clr-dark: #232323;
 	--clr-secondary-light: #c4a77d;
 	--clr-lightblue: #65def1;
@@ -13,15 +13,23 @@
 	transition: all ease-in-out 250ms;
 }
 body {
+	background: var(--clr-light);
 	margin: 0;
 	font-family: 'Raleway', sans-serif;
 	text-align: center;
 	overflow-x: hidden;
 }
+header {
+	display: flex;
+}
 
 img {
 	max-width: 100%;
 	height: auto;
+}
+.logo {
+	height: 7rem;
+	float: left;
 }
 
 .container {
@@ -31,12 +39,12 @@ img {
 	overflow: hidden;
 }
 
-/*clear: both does not allow floating elements on left or right*/
 .clearfix::after,
 section::after,
 footer::after {
 	content: '';
 	display: block;
+	/*clear: both does not allow floating elements on left or right*/
 	clear: both;
 }
 
@@ -98,7 +106,9 @@ p:last-of-type {
 }
 
 .title {
-	color: var(--clr-dark);
+	color: var(--clr-light);
+	text-shadow: 0px 0px 10px var(--clr-dark);
+
 	font-size: 4em;
 	margin-bottom: 1.5em;
 	font-weight: 1000;
@@ -111,6 +121,8 @@ p:last-of-type {
 }
 
 .title-cta {
+	color: var(--clr-dark);
+	text-shadow: none;
 	margin: 0 0 0.5em;
 }
 
@@ -274,11 +286,11 @@ nav a:focus {
 ===========*/
 
 .home-about-textbox {
-	color: #fff;
+	color: var(--clr-light);
 	background-color: #232323;
 	padding: 4em;
 	width: 100vw;
-	margin-left: -4.5%;
+	/* margin-left: -4.5%; */
 	outline: 2.5px solid var(--clr-secondary-light);
 	outline-offset: -2.5em;
 	position: relative;
@@ -303,6 +315,8 @@ nav a:focus {
 	}
 	.home-about-textbox {
 		padding: 5.5em;
+		width: inherit;
+		/* outline-offset: -4.5em; */
 	}
 	.home-about-textbox h1 {
 		top: 0.6em;
@@ -315,11 +329,13 @@ nav a:focus {
 		font-size: 2.5rem;
 	}
 	.home-about {
-		/* background: url(who-we-are.jpg) no-repeat  50% 50%; */
-		background-image: url(who-we-are.jpg);
-		background-repeat: no-repeat;
-		background-position: center;
-		background-origin: context-box;
+		display: flex;
+		align-items: center;
+		background: url(/assets/skiLS1.jpg) no-repeat 50% 50%;
+		background-size: contain;
+		/* border-radius: 0em 0em 2em 2em; */
+		/* background-position: center; */
+		/* background-origin: context-box; */
 		padding-top: 10em;
 		padding-bottom: 10em;
 	}
@@ -343,13 +359,22 @@ nav a:focus {
 ==============*/
 
 .portfolio {
-	margin: 3em 0 0;
+	margin: 3em 0;
+
+	/* height: 100%;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, 2fr);
+	gap: 10px; */
+	/* grid-template-rows: repeat(2, 1fr); */
 }
 
 .port-item {
 	margin: 0;
+
 	position: relative;
-	border-radius: 5px;
+	width: 100%;
+	/* border-radius: 5px; */
 }
 
 .port-item img {
@@ -383,8 +408,11 @@ nav a:focus {
 
 @media (min-width: 60rem) {
 	.port-item {
-		width: 33.3333334%;
+		width: 33.3333332%;
 		overflow: hidden;
+	}
+	.port-item img {
+		width: 100%;
 	}
 
 	.port-description {
