@@ -31,6 +31,7 @@ img {
 }
 .logo {
 	position: relative;
+	float: left;
 
 	/* height: 7rem; */
 }
@@ -366,6 +367,10 @@ nav a:focus {
 	/* font-weight: bold; */
 	color: var(--clr-dark);
 }
+#portfolio-section h1 span {
+	display: block;
+}
+
 .portfolio {
 	margin: 3em 0;
 	/* height: 100%;
@@ -461,5 +466,5 @@ footer {
 	background: #232323;
 	color: var(--clr-light);
 	text-align: left;
-	padding: 5em 0;
+	padding: 4em 0;
 }
