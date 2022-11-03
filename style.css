@@ -1,3 +1,4 @@
+/* Raleway */
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,900');
 
 :root {
@@ -8,10 +9,12 @@
 	--clr-lightblue: #65def1;
 	--clr-darkblue: #2d728f;
 }
+
 * {
 	box-sizing: border-box;
 	transition: all ease-in-out 250ms;
 }
+
 body {
 	background: var(--clr-light);
 	margin: 0;
@@ -52,18 +55,19 @@ footer::after {
 	clear: both;
 }
 
-/*column system
-===============*/
+/*===Column system (currently used in footer)===*/
 
 [class^='col-'] {
 	width: 100%;
 	margin-top: 1em;
+	/* padding-top: 0em; */
 }
 [class^='col-']:first-child {
-	margin-top: 0;
+	margin-top: 0em;
 }
 
 .col-1 {
+	/* margin-top: 2rem; */
 	/*col 1 stacked on X*/
 	width: 33.3333%;
 	float: left;
@@ -89,12 +93,12 @@ footer::after {
 	}
 
 	.col-1 {
+		padding-top: 1.75em;
 		width: 16.6666%;
 	}
 }
 
-/*Typography
-===========*/
+/*===Typography===*/
 
 h1 {
 	font-weight: 300;
@@ -142,8 +146,7 @@ p:last-of-type {
 	}
 }
 
-/*buttons
-========*/
+/*===Buttons===*/
 .button {
 	display: inline-block;
 	font-size: 1.25rem;
@@ -194,8 +197,7 @@ p:last-of-type {
 	color: var(--clr-secondary-light);
 }
 
-/*Parallax
-============*/
+/*===Parallax (not certain about these classes), using bg-attachment:fixed on the hero bg img===*/
 
 @media (min-width: 25rem) {
 	.parallax--bg {
@@ -207,8 +209,7 @@ p:last-of-type {
 	}
 }
 
-/*header
-=========*/
+/*===header===*/
 header {
 	position: absolute;
 	width: 100%;
@@ -286,8 +287,7 @@ nav a:focus {
 	}
 }
 
-/*hero-home
-===========*/
+/*===hero-home===*/
 
 .home-about-textbox {
 	color: var(--clr-light);
@@ -359,8 +359,7 @@ nav a:focus {
 	}
 }
 
-/*portfolio
-==============*/
+/*===portfolio===*/
 
 #portfolio-section h1 {
 	margin-top: 1.5rem;
@@ -373,12 +372,6 @@ nav a:focus {
 
 .portfolio {
 	margin: 3em 0;
-	/* height: 100%;
-	width: 100%;
-	display: grid;
-	grid-template-columns: repeat(2, 2fr);
-	gap: 10px; */
-	/* grid-template-rows: repeat(2, 1fr); */
 }
 
 .port-item {
@@ -387,7 +380,6 @@ nav a:focus {
 
 	position: relative;
 	width: 100%;
-	/* border-radius: 5px; */
 }
 
 .port-item img {
@@ -419,15 +411,15 @@ nav a:focus {
 @media (min-width: 37rem) {
 	.port-item {
 		width: 50%;
+
+		/* line up into "grid" stacked left */
 		float: left;
-		/* vertical-align: top; */
 	}
 	.port-item img {
 		width: 100%;
 		height: 100%;
 		/* overflow: hidden; */
 		/* width: fit-content; */
-		/* vertical-align: bottom; */
 	}
 }
 
@@ -444,14 +436,13 @@ nav a:focus {
 	.port-description {
 		transform: translateY(150%);
 	}
-	/*appear on hover*/
+	/*Description appears on hover at larger screen sizes*/
 	.port-item:hover .port-description {
 		transform: translateY(0%);
 	}
 }
 
-/*Call to action CTA
-===============*/
+/*===Call to action===*/
 
 .cta {
 	background-color: var(--clr-secondary-light);
@@ -459,8 +450,7 @@ nav a:focus {
 	color: #232323;
 }
 
-/*footer
-============*/
+/*===Footer===*/
 
 footer {
 	background: #232323;
