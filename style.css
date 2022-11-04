@@ -465,3 +465,8 @@ footer {
 	text-align: left;
 	padding: 4em 0;
 }
+.git-link {
+	text-decoration: none;
+	color: #fff;
+	margin-left: 5px;
+}
