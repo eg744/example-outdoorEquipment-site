@@ -275,7 +275,7 @@ nav a:focus {
 /*home-hero
 ======*/
 .home-hero {
-	background-image: url(./assets/bg-image.jpg);
+	background-image: url(./assets/outdoors_inc_bg.webp);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -342,7 +342,7 @@ nav a:focus {
 	.home-about {
 		display: flex;
 		align-items: center;
-		background: url(assets/skiLS1.jpg) no-repeat 50% 50%;
+		background: url(assets/outdoors_inc_ski1.webp) no-repeat 50% 50%;
 		background-size: contain;
 		/* border-radius: 0em 0em 2em 2em; */
 		/* background-position: center; */
@@ -465,6 +465,7 @@ footer {
 	text-align: left;
 	padding: 4em 0;
 }
+
 .git-link {
 	text-decoration: none;
 	color: #fff;
